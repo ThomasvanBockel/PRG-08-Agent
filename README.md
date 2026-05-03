@@ -1,4 +1,4 @@
-# Instalatie LLM
+# installation LLM
 
 - ### Clone the repository
 

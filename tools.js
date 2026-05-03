@@ -10,7 +10,7 @@ const vectorStore = await FaissStore.load("./documents", embeddings);
 
 export const getCharacter = tool(
     async ({character}) => {
-        // console.log(`🔧 the character is ${character}`)
+        console.log(`🔧 the character is ${character}`)
         const releventDocuments = await vectorStore.similaritySearch(character, 10)
         const context = releventDocuments.map((doc) => doc.pageContent).join('\n\n')
         // console.log("--------- CONTEXT ----------")
@@ -32,7 +32,7 @@ export const getCharacter = tool(
 
 export const getCard = tool(
     async ({card}) => {
-        // console.log(`🔧 the card is ${card}`)
+        console.log(`🔧 the card is ${card}`)
         const releventDocuments = await vectorStore.similaritySearch(card, 10)
         const context = releventDocuments.map((doc) => doc.pageContent).join('\n\n')
         // console.log("--------- CONTEXT ----------")
@@ -54,7 +54,7 @@ export const getCard = tool(
 
 export const getPlayTime = tool(
     async ({playtime}) => {
-        console.log("hallo in getAchievements")
+        console.log("🔧 playing time tool")
         const res = await fetch(`https://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=${process.env.MY_STEAM_KEY}&steamid=76561198815904737`)
 
 
